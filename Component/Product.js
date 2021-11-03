@@ -1,65 +1,53 @@
-import React from 'react'; 
-import {Text, styles, Image, View,StyleSheet, TouchableOpacity} from 'react-native';
+import React from 'react';
+import {Text, Image, View, StyleSheet, TouchableOpacity} from 'react-native';
 
-
-export function Product({name, price, color, size, reviews, image, promo}){
-    return (
-        <TouchableOpacity>
-            <image  
-                style ={styles.productImage}  
-                source={image}/>
-            <View>
-                <Text style={styles.productName}>{name} </Text>
-                <Text style={styles.productPrice}>{price} </Text>
-                <Text style={styles.productColor}>{color} </Text>
-                <Text style={styles.productReviews}>{reviews} </Text>
-                <Text style={styles.productSize}>{size} </Text>
-                <Text style={styles.productPromo}>{promo} </Text>
-            </View>    
-        </TouchableOpacity>
-
-
-    )
+export function Product({name,  price, image, onPress}) {
+  return (
+    <TouchableOpacity style={styles.card} onPress={onPress}>
+      <Image
+        style={styles.thumb}
+        source={image}
+      />
+      <View style={styles.infoContainer}>
+        <Text style={styles.name}>{name}</Text>
+        <Text style={styles.price}>$ {price}</Text>
+      
+      </View>
+    </TouchableOpacity>
+  );
 }
 
 const styles = StyleSheet.create({
-    productImage: {
-        height: 200,
-        width:  150,
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 16,
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    shadowColor: 'black',
+    shadowOffset: {
+      height: 0,
+      width: 0,
     },
+    elevation: 1,
+    marginVertical: 20,
+  },
+  thumb: {
+    height: 260,
+    borderTopLeftRadius: 16,
+    borderTopRightRadius: 16,
+    width: '100%',
+  },
+  infoContainer: {
+    padding: 16,
+  },
+  name: {
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  price: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginBottom: 8,
+  },
+});
 
-    productName: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: 'blue'
-    },
-
-    productPrice: {
-        fontSize: 18,
-        fontWeight: 500,
-        color: 'floralwhite'
-    },
-    productColor: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: 'blue'
-    },
-    productSize: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: 'blue'
-    },
-    productPromo: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: 'blue'
-    },
-    productPromo: {
-       
-    },
-
-
-
-
-
-})
