@@ -72,8 +72,6 @@ export default function Login({navigation}){
                 title="Submit"
             />
              
-
-           
                         
             <TouchableOpacity 
             onPress={() =>{navigation.navigate('Home')}}

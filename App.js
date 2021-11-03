@@ -1,32 +1,53 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Login from './Screens/login';
-import Home from './Screens/Home';
-import cart from './Screens/Cart';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function App() {
-  const MainNavigator = createStackNavigator()
+
+
+import { Home } from './screens/Home.js';
+import { ProductDetails } from './screens/ProductDetails.js';
+import { Cart } from './screens/Cart.js';
+import { CartIcon } from './Component/CartIcon.js';
+
+import { CartProvider } from './CartContext.js';
+
+
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <NavigationContainer>
-      <MainNavigator.Navigator
-      screenOptions={{headerShown: false}}>
-        <MainNavigator.Screen name='Login' component={Login}/>
-        <MainNavigator.Screen name='Home' component={Home}/>
-        <MainNavigator.Screen name='cart' component={cart}/>
-      </MainNavigator.Navigator>
-    </NavigationContainer>
-    
+    <CartProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name='Products' component={Home} 
+          options={({ navigation }) => ({
+            title: 'Products ava',
+            headerTitleStyle: styles.headerTitle,
+            headerRight: () => <CartIcon navigation={navigation}/>
+          })}/>
+          <Stack.Screen name='ProductDetails' component={ProductDetails} 
+          options={({ navigation }) => ({
+            title: 'Product details',
+            headerTitleStyle: styles.headerTitle,
+            headerRight: () => <CartIcon navigation={navigation}/>,
+          })} />
+          <Stack.Screen name='Cart' component={Cart} 
+          options={({ navigation }) => ({
+            title: 'My cart',
+            headerTitleStyle: styles.headerTitle,
+            headerRight: () => <CartIcon navigation={navigation}/>,
+          })} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </CartProvider>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  headerTitle: {
+    fontSize: 20
+  }
 });
+
+export default App;
