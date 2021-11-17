@@ -11,6 +11,8 @@ import { Cart } from './screens/Cart.js';
 import { CartIcon } from './Component/CartIcon.js';
 
 import { CartProvider } from './CartContext.js';
+import CheckOut from './screens/CheckOut.js';
+import Login from './screens/login.js';
 
 
 const Stack = createNativeStackNavigator();
@@ -20,9 +22,15 @@ function App() {
     <CartProvider>
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen name='login' component={Login} 
+          options={({ navigation }) => ({
+            title: 'Log in here',
+            headerTitleStyle: styles.headerTitle,
+            headerRight: () => <CartIcon navigation={navigation}/>,
+          })} />
           <Stack.Screen name='Products' component={Home} 
           options={({ navigation }) => ({
-            title: 'Products ava',
+            title: 'Mac Book Available',
             headerTitleStyle: styles.headerTitle,
             headerRight: () => <CartIcon navigation={navigation}/>
           })}/>
@@ -35,6 +43,13 @@ function App() {
           <Stack.Screen name='Cart' component={Cart} 
           options={({ navigation }) => ({
             title: 'My cart',
+            headerTitleStyle: styles.headerTitle,
+            headerRight: () => <CartIcon navigation={navigation}/>,
+          })} />
+          
+           <Stack.Screen name='CheckOut' component={CheckOut} 
+          options={({ navigation }) => ({
+            title: 'Shipping Information',
             headerTitleStyle: styles.headerTitle,
             headerRight: () => <CartIcon navigation={navigation}/>,
           })} />

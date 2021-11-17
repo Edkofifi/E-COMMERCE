@@ -19,23 +19,23 @@ export function Product({name,  price, image, onPress}) {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: 'white',
+    backgroundColor: 'floralwhite',
     borderRadius: 16,
     shadowOpacity: 0.2,
     shadowRadius: 4,
     shadowColor: 'black',
     shadowOffset: {
-      height: 0,
-      width: 0,
+      height: 20,
+      width: 20,
     },
     elevation: 1,
     marginVertical: 20,
   },
   thumb: {
-    height: 260,
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
-    width: '100%',
+    width: 230,
+    height: 260,
   },
   infoContainer: {
     padding: 16,

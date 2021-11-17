@@ -37,6 +37,8 @@ export function Cart ({navigation}) {
       renderItem={renderItem}
       keyExtractor={(item) => item.product.id.toString()}
       ListFooterComponent={Totals}
+      
+     
     />
   );
 }
@@ -68,10 +70,12 @@ const styles = StyleSheet.create({
   },
   itemsList: {
     backgroundColor: '#eeeeee',
+    marginLeft: 20,
   },
   itemsListContainer: {
     backgroundColor: '#eeeeee',
     paddingVertical: 8,
     marginHorizontal: 8,
+    
   },
 });

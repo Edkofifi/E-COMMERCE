@@ -10,6 +10,7 @@ const PRODUCTS = [
         // reviews
         //promo
     },
+   
   
 ];
 
