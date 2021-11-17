@@ -134,6 +134,7 @@ const styles = StyleSheet.create({
          },
          backGround: {
              height: Dimensions.get('window').height,
+             
             
              
              
