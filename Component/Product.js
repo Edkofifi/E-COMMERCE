@@ -10,7 +10,7 @@ export function Product({name,  price, image, onPress}) {
       />
       <View style={styles.infoContainer}>
         <Text style={styles.name}>{name}</Text>
-        <Text style={styles.price}>$ {price}</Text>
+        <Text style={styles.price}>GHC {price}</Text>
       
       </View>
     </TouchableOpacity>
@@ -20,13 +20,13 @@ export function Product({name,  price, image, onPress}) {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: 'floralwhite',
-    borderRadius: 16,
+    borderRadius: 12,
     shadowOpacity: 0.2,
     shadowRadius: 4,
     shadowColor: 'black',
     shadowOffset: {
-      height: 20,
-      width: 20,
+      height: 10,
+      width: 10,
     },
     elevation: 1,
     marginVertical: 20,
@@ -34,8 +34,9 @@ const styles = StyleSheet.create({
   thumb: {
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
-    width: 130,
-    height: 150,
+    width: 90,
+    height: 100,
+    paddingRight: 5,
   },
   infoContainer: {
     padding: 16,
