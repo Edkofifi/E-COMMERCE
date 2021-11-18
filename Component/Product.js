@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
   thumb: {
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
-    width: 230,
-    height: 260,
+    width: 130,
+    height: 150,
   },
   infoContainer: {
     padding: 16,
