@@ -9,8 +9,8 @@ import { ProductDetails } from './screens/ProductDetails.js';
 import { Cart } from './screens/Cart.js';
 import { CartIcon } from './Component/CartIcon.js';
 import { CartProvider } from './CartContext.js';
-import CheckOut from './screens/CheckOut.js';
 import Login from './screens/login.js';
+import CheckOut from './screens/CheckOut.js';
 
 
 
